@@ -171,6 +171,30 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-image { max-width: 360px; }
 }
 
+/* ===== TRUST BAR ===== */
+.trust-bar {
+  background: var(--white); border-bottom: 1px solid var(--slate-200);
+  padding: 28px 24px;
+}
+.trust-bar-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 600; color: var(--slate-600);
+}
+.trust-item .trust-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--brand-light); color: var(--brand);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .trust-bar-inner { gap: 20px; }
+  .trust-item { font-size: 13px; }
+}
+
 /* ===== SECTIONS ===== */
 .section { padding: 80px 24px; }
 .section-header { text-align: center; margin-bottom: 48px; }

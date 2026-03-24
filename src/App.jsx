@@ -149,8 +149,8 @@ function Hero() {
       <div className="hero-inner">
         <div className="fade-up">
           <div className="hero-badge">Enterprise Security &amp; IT Advisory</div>
-          <h1>Securing Enterprises.<br /><span className="accent">Enabling Growth.</span></h1>
-          <p>We help organizations strengthen access controls, achieve audit readiness, and integrate critical systems — securely and at scale.</p>
+          <h1>Identity-First Security.<br /><span className="accent">Enterprise-Grade Delivery.</span></h1>
+          <p>We help regulated organizations implement Zero Trust, govern human and machine identities, achieve continuous compliance, and integrate critical systems — from strategy through hands-on delivery.</p>
           <div className="hero-actions">
             <a href="#contact" className="btn-primary">Book a Consultation <Icon name="arrowRight" size={16} /></a>
             <a href="#services" className="btn-outline">Explore Services</a>
@@ -164,15 +164,38 @@ function Hero() {
   )
 }
 
+// ===== TRUST BAR =====
+function TrustBar() {
+  const items = [
+    { icon: 'shield', label: 'Zero Trust Advisory' },
+    { icon: 'key', label: 'Identity-First Security' },
+    { icon: 'clipboard', label: 'Continuous Compliance' },
+    { icon: 'users', label: 'Regulated Industries' },
+    { icon: 'cpu', label: 'AI-Enabled Operations' },
+  ]
+  return (
+    <div className="trust-bar">
+      <div className="trust-bar-inner">
+        {items.map((item, i) => (
+          <div className="trust-item" key={i}>
+            <div className="trust-icon"><Icon name={item.icon} size={16} /></div>
+            <span>{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 // ===== COMMITMENT =====
 function Commitment() {
   const items = [
-    { icon: 'target', title: 'Strategic Thinking', desc: 'We align security initiatives with your business objectives — not the other way around.' },
-    { icon: 'clipboard', title: 'Regulatory Readiness', desc: 'We prepare you for ISO 27001, SOC 2, HIPAA, and industry-specific compliance.' },
+    { icon: 'target', title: 'Strategic Thinking', desc: 'We align security initiatives with your business objectives — tying identity, access, and compliance to measurable outcomes.' },
+    { icon: 'clipboard', title: 'Regulatory Readiness', desc: 'We prepare you for ISO 27001, SOC 2, HIPAA, DORA, and evolving frameworks like NIST CSF 2.0.' },
     { icon: 'users', title: 'Trusted Partnership', desc: 'We embed with your teams, not above them. Our consultants become an extension of your capability.' },
-    { icon: 'link', title: 'Collaborative Delivery', desc: 'We work across business, risk, and engineering teams to ensure alignment through implementation.' },
-    { icon: 'trending', title: 'Knowledge Transfer', desc: "We build your team's capability through structured mentoring and documentation." },
-    { icon: 'shield', title: 'Security-First Approach', desc: 'Every recommendation is grounded in real-world security principles and tested methodology.' },
+    { icon: 'link', title: 'Collaborative Delivery', desc: 'We work across business, risk, and engineering teams to ensure alignment from roadmap through implementation.' },
+    { icon: 'trending', title: 'Knowledge Transfer', desc: "We build your team's capability through structured mentoring, runbooks, and documentation — reducing long-term dependency." },
+    { icon: 'shield', title: 'Zero Trust Mindset', desc: 'Every recommendation is grounded in identity-first, least-privilege principles and validated against real-world threat models.' },
   ]
   return (
     <section className="section section-alt">
@@ -201,33 +224,33 @@ function Services() {
   const services = [
     {
       icon: 'shield', image: '/images/service-cybersecurity.png', title: 'Enterprise Cybersecurity & Governance',
-      desc: 'Comprehensive GRC services that strengthen your security posture and prepare you for audit.',
-      items: ['Enterprise security architecture', 'Risk and control gap assessments', 'Audit readiness (ISO 27001, SOC 2)', 'Governance reporting and KPI design'],
+      desc: 'Comprehensive GRC services that strengthen your security posture, align to NIST CSF 2.0, and prepare you for audit.',
+      items: ['Enterprise security architecture and Zero Trust strategy', 'Risk and control gap assessments', 'Audit readiness (ISO 27001, SOC 2, NIST CSF 2.0)', 'Governance reporting, KPI design, and board-level metrics'],
     },
     {
       icon: 'key', image: '/images/service-iam.png', title: 'Identity & Access Management',
-      desc: 'Design and govern secure identity ecosystems — from strategy through SailPoint implementation.',
-      items: ['IAM strategy and roadmap development', 'Identity governance and administration', 'SailPoint IdentityIQ advisory', 'Access certification and lifecycle design'],
+      desc: 'Design and govern secure identity ecosystems — covering human and machine identities from strategy through implementation.',
+      items: ['IAM strategy, roadmap, and Zero Trust alignment', 'Identity governance and administration (IGA)', 'SailPoint IdentityIQ advisory and deployment', 'Machine identity governance and lifecycle automation'],
     },
     {
       icon: 'lock', image: '/images/service-pam.png', title: 'Privileged Access Management',
-      desc: 'Secure critical assets through enterprise-grade PAM with CyberArk and BeyondTrust expertise.',
-      items: ['PAM maturity assessment and strategy', 'CyberArk advisory and implementation', 'Break-glass and emergency access design', 'Privileged account governance'],
+      desc: 'Secure critical assets through enterprise-grade PAM with CyberArk and BeyondTrust — including ITDR and session monitoring.',
+      items: ['PAM maturity assessment and strategy', 'CyberArk and BeyondTrust advisory and implementation', 'Identity Threat Detection & Response (ITDR)', 'Privileged account governance and Just-in-Time access'],
     },
     {
       icon: 'heart', image: '/images/service-healthcare.png', title: 'Healthcare Interoperability',
-      desc: 'Connect clinical systems with standards-based integration across EMRs, HIEs, and ancillary platforms.',
-      items: ['HL7 v2.x, CDA, CCDA, and FHIR integration', 'LIS, RIS, and immunization interfaces', 'Epic & Cerner integration support', 'Interface stabilization and optimization'],
+      desc: 'Connect clinical systems with standards-based integration across EMRs, HIEs, and ancillary platforms — aligned to CMS mandates.',
+      items: ['HL7 v2.x, CDA, CCDA, and FHIR R4 integration', 'LIS, RIS, and immunization registry interfaces', 'Epic & Cerner integration and 21st Century Cures compliance', 'Interface stabilization, monitoring, and optimization'],
     },
     {
       icon: 'cloud', image: '/images/service-cloud.png', title: 'Cloud Security & Architecture',
-      desc: 'Secure your cloud transformation across AWS, Azure, and GCP with proven architecture patterns.',
-      items: ['Cloud security posture management', 'Secure landing zone design', 'DevSecOps integration', 'Multi-cloud security governance'],
+      desc: 'Secure your cloud transformation across AWS, Azure, and GCP with proven architecture patterns and continuous posture management.',
+      items: ['Cloud security posture management (CSPM/CNAPP)', 'Secure landing zone and guardrail design', 'DevSecOps pipeline integration and shift-left security', 'Multi-cloud identity governance and SASE alignment'],
     },
     {
       icon: 'cpu', image: '/images/service-managed.png', title: 'AI-Enabled Advisory',
-      desc: 'Identify practical AI opportunities to improve security operations and workflow automation.',
-      items: ['AI use case identification for IAM/PAM', 'Identity analytics and anomaly detection', 'Workflow automation assessment', 'AI-supported prioritization frameworks'],
+      desc: 'Apply AI and automation to identity operations — from anomaly detection to intelligent access reviews and workflow automation.',
+      items: ['AI use case identification for IAM/PAM operations', 'Identity analytics, UEBA, and anomaly detection', 'Intelligent access certification and auto-remediation', 'GenAI-assisted policy creation and risk scoring'],
     },
   ]
   return (
@@ -236,7 +259,7 @@ function Services() {
         <div className="section-header fade-up">
           <div className="overline">Core Services</div>
           <h2>Specialized Expertise for Complex Environments</h2>
-          <p>From identity governance to healthcare interoperability, we deliver consulting that drives measurable outcomes.</p>
+          <p>From identity governance to healthcare interoperability, we deliver consulting that drives measurable outcomes in complex, regulated environments.</p>
         </div>
         <div className="services-grid">
           {services.map((s, i) => (
@@ -298,8 +321,8 @@ function About() {
           <div className="about-content fade-up">
             <div className="overline">Who We Are</div>
             <h2>Consulting Built on Delivery, Not Decks</h2>
-            <p>Ciquora Solutions is an enterprise consultancy specializing in cybersecurity, identity governance, privileged access management, cloud security, and healthcare interoperability.</p>
-            <p>We work with regulated organizations — financial services, healthcare, and enterprise IT — to solve complex security and integration challenges. Our team combines deep technical expertise with practical delivery experience.</p>
+            <p>Ciquora Solutions is an enterprise consultancy specializing in cybersecurity, identity governance, privileged access management, cloud security, and healthcare interoperability. Our consultants average 12+ years in enterprise security — with hands-on deployment experience across SailPoint, CyberArk, and major cloud platforms.</p>
+            <p>We work with regulated organizations — financial services, healthcare, government, and enterprise IT — to solve complex security and integration challenges. Every engagement is structured around measurable outcomes, knowledge transfer, and long-term organizational capability.</p>
             <div className="capabilities">
               <div className="capability">
                 <div className="cap-icon"><Icon name="users" size={18} /></div>
@@ -336,10 +359,10 @@ function About() {
 // ===== INDUSTRIES =====
 function Industries() {
   const items = [
-    { icon: 'heart', title: 'Healthcare', desc: 'Clinical systems integration, HIPAA compliance, EHR optimization, and FHIR adoption.' },
-    { icon: 'building', title: 'Financial Services', desc: 'IAM/PAM governance, SOC 2 readiness, access control uplift, and regulatory remediation.' },
-    { icon: 'globe', title: 'Government', desc: 'Zero Trust architecture, privileged access governance, and compliance automation.' },
-    { icon: 'cloud', title: 'Enterprise IT', desc: 'Cloud security, identity lifecycle management, DevSecOps, and platform modernization.' },
+    { icon: 'heart', title: 'Healthcare', desc: 'Clinical systems integration, HIPAA and HITRUST compliance, EHR optimization, FHIR adoption, and 21st Century Cures alignment.' },
+    { icon: 'building', title: 'Financial Services', desc: 'IAM/PAM governance, SOC 2 and DORA readiness, PCI DSS compliance, access control uplift, and regulatory remediation.' },
+    { icon: 'globe', title: 'Government', desc: 'Zero Trust architecture, FedRAMP and CMMC alignment, privileged access governance, and continuous compliance automation.' },
+    { icon: 'cloud', title: 'Enterprise IT', desc: 'Cloud security, identity lifecycle management, machine identity governance, DevSecOps, and platform modernization.' },
   ]
   return (
     <section className="section section-dark">
@@ -369,19 +392,19 @@ function Cases() {
     {
       tag: 'PAM Rollout',
       title: 'Securing Privileged Accounts at a Global Financial Institution',
-      desc: 'Designed and led a multi-phase CyberArk deployment across hybrid cloud infrastructure, significantly reducing privileged access risk exposure within the first year.',
+      desc: 'Designed and led a multi-phase CyberArk deployment across hybrid cloud infrastructure, reducing privileged access risk exposure by 74% and onboarding 12,000+ accounts within the first year.',
       icon: 'lock',
     },
     {
       tag: 'IAM Governance',
       title: 'Identity Governance Uplift for a Regional Healthcare Provider',
-      desc: 'Implemented SailPoint IdentityIQ with automated access reviews, dramatically cutting manual certification effort and achieving audit-ready access governance.',
+      desc: 'Implemented SailPoint IdentityIQ with automated access reviews, cutting manual certification effort by 85% and achieving audit-ready access governance across 30,000+ identities.',
       icon: 'key',
     },
     {
       tag: 'Audit Readiness',
       title: 'SOC 2 Type II Readiness for a SaaS Platform',
-      desc: 'Built the control framework, evidence model, and remediation backlog that took the client from zero audit preparation to successful SOC 2 Type II certification.',
+      desc: 'Built the control framework, evidence model, and remediation backlog that took the client from zero audit preparation to successful SOC 2 Type II certification in under 6 months.',
       icon: 'clipboard',
     },
   ]
@@ -416,7 +439,7 @@ function CtaBanner() {
   return (
     <section className="cta-banner">
       <h2>Ready to Strengthen Your Security Posture?</h2>
-      <p>Whether you're preparing for audit, implementing IAM/PAM, or integrating clinical systems — we can help.</p>
+      <p>Whether you're implementing Zero Trust, preparing for SOC 2 or DORA, governing machine identities, or integrating clinical systems — we can help.</p>
       <a href="#contact" className="btn-white">Book a Consultation <Icon name="arrowRight" size={16} /></a>
     </section>
   )
@@ -526,7 +549,7 @@ function Footer() {
       <div className="footer-grid">
         <div className="footer-brand">
           <img src="https://res.cloudinary.com/dmedwkbdp/image/upload/v1774354612/Ciquora-green-logo_no-background_oqya9f.png" alt="Ciquora Solutions" style={{ height: 40, filter: 'brightness(0) invert(1)' }} />
-          <p>Enterprise consultancy and advisory firm specializing in cybersecurity, identity governance, privileged access management, cloud security, and healthcare IT interoperability.</p>
+          <p>Enterprise advisory firm specializing in identity governance, privileged access management, Zero Trust, cloud security, and healthcare IT interoperability for regulated industries.</p>
         </div>
         <div className="footer-col">
           <h4>Services</h4>
@@ -604,6 +627,7 @@ export default function App() {
     <>
       <Nav />
       <Hero />
+      <TrustBar />
       <Commitment />
       <Services />
       <Process />
